@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Rizal Indriawan - Aspiring Data Analyst. Mengubah data menjadi insight lewat Excel, SQL, Python, dan Power BI.">
+    <meta name="keywords" content="portfolio, data analyst, data visualization, SQL, Python, Power BI">
+    <meta name="author" content="Rizal Indriawan">
+    <title>Rizal Indriawan | Aspiring Data Analyst</title>
+
+    <!-- Social preview (Open Graph / Twitter) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rizal Indriawan | Aspiring Data Analyst">
+    <meta property="og:description" content="Portfolio Rizal Indriawan - Aspiring Data Analyst. Mengubah data menjadi insight lewat Excel, SQL, Python, dan Power BI.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Rizal Indriawan | Aspiring Data Analyst">
+    <meta name="twitter:description" content="Portfolio Rizal Indriawan - Aspiring Data Analyst.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232563eb'/%3E%3Cstop offset='100%25' stop-color='%230891b2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230b0b12'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Inter, sans-serif' font-weight='800' font-size='40' fill='url(%23g)'%3ERI%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0b0b12">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Animated Gradient Background (sitewide) -->
+    <div class="mesh-gradient-bg" id="mesh-bg">
+        <div class="mesh-blob mesh-blob-1"></div>
+        <div class="mesh-blob mesh-blob-2"></div>
+        <div class="mesh-blob mesh-blob-3"></div>
+    </div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" id="nav-logo">
+                <span class="logo-text">RI</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-top">
+        <div class="hero-content">
+            <div class="hero-badge animate-reveal">
+                <span class="badge-dot"></span>
+                Available for Work
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line animate-reveal" style="--delay: 0.1s">
+                    <span class="title-greeting">Hi, I'm</span>
+                </span>
+                <span class="title-line animate-reveal" style="--delay: 0.2s">
+                    <span class="title-name gradient-text">Rizal Indriawan</span>
+                </span>
+                <span class="title-line animate-reveal" style="--delay: 0.3s">
+                    <span class="title-role">Aspiring <span class="text-accent">Data Analyst</span></span>
+                </span>
+            </h1>
+            <p class="hero-description animate-reveal" style="--delay: 0.4s">
+                Saya berfokus pada data analysis, data visualization, dan transforming data 
+                into meaningful insights. Menggunakan tools modern untuk menghasilkan keputusan berbasis data.
+            </p>
+            <div class="hero-cta animate-reveal" style="--delay: 0.5s">
+                <a href="assets/CV-Rizal-Indriawan.pdf" download class="btn btn-primary" id="cta-cv">
+                    <span>Download CV</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                </a>
+                <a href="#portfolio" class="btn btn-outline" id="cta-projects">
+                    <span>View Projects</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Interactive Floating Profile Card -->
+        <div class="hero-visual animate-reveal" style="--delay: 0.3s">
+            <div class="profile-card-wrapper" id="profile-card-wrapper">
+                <div class="profile-card" id="profile-card">
+                    <div class="profile-card-spotlight" id="profile-spotlight"></div>
+                    <div class="profile-card-border-glow"></div>
+                    <div class="profile-card-inner">
+                        <div class="profile-photo-container">
+                            <div class="profile-photo">
+                                <img src="assets/profile/profile-hero.jpg" alt="Rizal Indriawan">
+                            </div>
+                            <div class="profile-photo-ring"></div>
+                        </div>
+                        <div class="profile-card-info">
+                            <h3 class="profile-card-name">Rizal Indriawan</h3>
+                            <p class="profile-card-role">Aspiring Data Analyst</p>
+                            <div class="profile-card-divider"></div>
+                            <div class="profile-card-tags">
+                                <span>Excel</span>
+                                <span>SQL</span>
+                                <span>Python</span>
+                                <span>Power BI</span>
+                            </div>
+                        </div>
+                        <div class="profile-card-status">
+                            <span class="status-dot"></span>
+                            <span>Open to opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- End hero-top -->
+
+        <!-- Hero Stat Cards -->
+        <div class="hero-stats-cards animate-reveal" style="--delay: 0.6s">
+            <a href="#portfolio" class="hero-stat-card" data-tilt data-portfolio-tab="projects">
+                <div class="hero-stat-top">
+                    <span class="hero-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                    </span>
+                    <span class="hero-stat-number"><span class="stat-number" data-target="4">0</span></span>
+                </div>
+                <h3 class="hero-stat-label">Total Projects</h3>
+                <p class="hero-stat-desc">Data solutions built with real impact</p>
+                <svg class="hero-stat-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+            <a href="#portfolio" class="hero-stat-card" data-tilt data-portfolio-tab="certificates">
+                <div class="hero-stat-top">
+                    <span class="hero-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>
+                    </span>
+                    <span class="hero-stat-number"><span class="stat-number" data-target="4">0</span></span>
+                </div>
+                <h3 class="hero-stat-label">Certificates</h3>
+                <p class="hero-stat-desc">Professional skills validated</p>
+                <svg class="hero-stat-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+            <a href="#experience" class="hero-stat-card" data-tilt>
+                <div class="hero-stat-top">
+                    <span class="hero-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </span>
+                    <span class="hero-stat-number"><span class="stat-number" data-target="6">0</span></span>
+                </div>
+                <h3 class="hero-stat-label">Months Interned</h3>
+                <p class="hero-stat-desc">Data & ML intern at Kemenham</p>
+                <svg class="hero-stat-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+        </div>
+
+        <div class="scroll-indicator animate-reveal" style="--delay: 0.8s">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag animate-reveal">// About Me</span>
+                <h2 class="section-title animate-reveal">
+                    Transforming Data Into <span class="gradient-text">Insights</span>
+                </h2>
+            </div>
+            <div class="about-grid">
+                <!-- Draggable ID Card -->
+                <div class="about-card-area animate-reveal">
+                    <div class="id-card-strap-hook"></div>
+                    <svg class="id-card-strap-svg" id="id-card-strap-svg">
+                        <defs>
+                            <linearGradient id="strapGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#0c0c10"/>
+                                <stop offset="18%" stop-color="#232329"/>
+                                <stop offset="50%" stop-color="#2f2f37"/>
+                                <stop offset="82%" stop-color="#232329"/>
+                                <stop offset="100%" stop-color="#0c0c10"/>
+                            </linearGradient>
+                        </defs>
+                        <path id="id-card-strap-path" class="id-card-strap-path" d="M0,0 L0,0"></path>
+                        <path id="id-card-strap-edge-l" class="id-card-strap-edge" d="M0,0 L0,0"></path>
+                        <path id="id-card-strap-edge-r" class="id-card-strap-edge" d="M0,0 L0,0"></path>
+                        <text class="id-card-strap-text" dy="3">
+                            <textPath id="id-card-strap-textpath" href="#id-card-strap-path" startOffset="6" method="align" spacing="auto">3D CARD</textPath>
+                        </text>
+                    </svg>
+                    <div class="id-card-container" id="id-card-container">
+                        <div class="id-card" id="id-card">
+                            <div class="id-card-hole"></div>
+                            <div class="id-card-inner">
+                                <div class="id-card-header">
+                                    <div class="id-card-logo">
+                                        <span class="logo-text">RI</span>
+                                    </div>
+                                    <span class="id-card-badge">PROFILE CARD</span>
+                                </div>
+                                <div class="id-card-photo">
+                                    <img src="assets/profile/profile-about.jpg" alt="Rizal Indriawan">
+                                </div>
+                                <div class="id-card-details">
+                                    <h3 class="id-card-name">Rizal Indriawan</h3>
+                                    <p class="id-card-role">Aspiring Data Analyst</p>
+                                    <div class="id-card-skills">
+                                        <span>Excel</span>
+                                        <span>SQL</span>
+                                        <span>Python</span>
+                                        <span>Power BI</span>
+                                    </div>
+                                    <div class="id-card-footer">
+                                        <span class="id-card-label">Data Analytics Portfolio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="id-card-drag-hint">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14">
+                                    <path d="M12 2v20M2 12h20M7 7l5-5 5 5M17 17l-5 5-5-5"/>
+                                </svg>
+                                <span>Drag me</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <p class="about-text animate-reveal">
+                        Saya adalah seorang <strong>Aspiring Data Analyst</strong> yang passionate dalam mengubah 
+                        raw data menjadi insights yang bermakna. Dengan kemampuan dalam 
+                        <strong>Excel, SQL, Python, dan Power BI</strong>, saya membantu organisasi membuat 
+                        keputusan yang lebih baik berbasis data.
+                    </p>
+                    <p class="about-text animate-reveal">
+                        Saya percaya bahwa setiap dataset menyimpan cerita. Tugas saya adalah menemukan 
+                        cerita itu dan menyajikannya dengan cara yang mudah dipahami dan actionable.
+                    </p>
+                    <div class="about-highlights animate-reveal">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Data Analysis</h3>
+                                <p>Cleaning, processing, and analyzing complex datasets</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M3 9h18"/>
+                                    <path d="M9 21V9"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Data Visualization</h3>
+                                <p>Creating compelling dashboards and visual stories</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Business Intelligence</h3>
+                                <p>Transforming data into strategic business decisions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag animate-reveal">// Portfolio Showcase</span>
+                <h2 class="section-title animate-reveal">
+                    Explore My <span class="gradient-text">Work</span>
+                </h2>
+                <p class="section-subtitle animate-reveal">
+                    Proyek data, sertifikasi, dan tech stack yang saya gunakan sehari-hari. Setiap bagian mewakili tonggak dalam perjalanan belajar saya.
+                </p>
+            </div>
+
+            <div class="portfolio-tabs animate-reveal" id="portfolio-tabs" role="tablist">
+                <button class="portfolio-tab active" data-tab="projects" role="tab" aria-selected="true" id="tab-btn-projects">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    <span>Projects</span>
+                </button>
+                <button class="portfolio-tab" data-tab="certificates" role="tab" aria-selected="false" id="tab-btn-certificates">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+                    <span>Certificates</span>
+                </button>
+                <button class="portfolio-tab" data-tab="techstack" role="tab" aria-selected="false" id="tab-btn-techstack">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <span>Tech Stack</span>
+                </button>
+            </div>
+
+            <!-- Projects Panel -->
+            <div class="portfolio-panel active" id="panel-projects" role="tabpanel">
+                <div class="projects-grid">
+
+                    <!-- Project 1: Sales Performance -->
+                    <div class="project-card animate-reveal" id="project-1" data-tilt>
+                        <div class="project-image">
+                            <img src="assets/projects/sales-performance.jpg" alt="E-Commerce Sales & Profitability Dashboard preview" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags"><span class="project-tag">Excel</span><span class="project-tag">Looker Studio</span><span class="project-tag">Data Cleaning</span></div>
+                            <h3 class="project-title">E-Commerce Sales & Profitability Dashboard</h3>
+                            <p class="project-description">Dashboard BI interaktif untuk menganalisis penjualan, profitabilitas, segmen pelanggan, dan performa regional e-commerce sepanjang 2025.</p>
+                            <div class="project-actions">
+                                <a href="https://github.com/RizalIndriawan/Salas-Perfomance/tree/main" target="_blank" rel="noopener" class="project-btn project-btn-github">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button type="button" class="project-btn project-btn-details" data-project="sales-performance">
+                                    <span>Details</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Kopi Tuku -->
+                    <div class="project-card animate-reveal" id="project-2" data-tilt>
+                        <div class="project-image">
+                            <img src="assets/projects/kopi-tuku.jpg" alt="Kopi Tuku Campaign Performance Dashboard preview" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Pandas</span><span class="project-tag">Looker Studio</span></div>
+                            <h3 class="project-title">Kopi Tuku Campaign Performance</h3>
+                            <p class="project-description">Analisis performa campaign marketing sepanjang 2025 — dari data cleaning hingga dashboard interaktif untuk mengukur ROAS, profit, dan efektivitas channel.</p>
+                            <div class="project-actions">
+                                <a href="https://github.com/RizalIndriawan/kopi-tuku-campaign-performance" target="_blank" rel="noopener" class="project-btn project-btn-github">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button type="button" class="project-btn project-btn-details" data-project="kopi-tuku">
+                                    <span>Details</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Pizza Sales -->
+                    <div class="project-card animate-reveal" id="project-3" data-tilt>
+                        <div class="project-image">
+                            <img src="assets/projects/pizza-sales.jpg" alt="Pizza Sales Performance Dashboard preview" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags"><span class="project-tag">Excel</span><span class="project-tag">Power Query</span><span class="project-tag">Dashboard</span></div>
+                            <h3 class="project-title">Pizza Sales Performance</h3>
+                            <p class="project-description">Dashboard performa penjualan pizza untuk melacak tren pesanan, kategori produk terlaris, dan pendapatan per ukuran dan kategori.</p>
+                            <div class="project-actions">
+                                <a href="https://github.com/RizalIndriawan/Pizza-Sales-Performance/tree/main" target="_blank" rel="noopener" class="project-btn project-btn-github">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button type="button" class="project-btn project-btn-details" data-project="pizza-sales">
+                                    <span>Details</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: News Topic Clustering -->
+                    <div class="project-card animate-reveal" id="project-4" data-tilt>
+                        <div class="project-image">
+                            <img src="assets/projects/news-clustering-1.png" alt="Pemodelan & Klasterisasi Topik Berita KEMENHAM dashboard preview" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">NLP</span><span class="project-tag">Clustering</span></div>
+                            <h3 class="project-title">Pemodelan & Klasterisasi Topik Berita</h3>
+                            <p class="project-description">Pemodelan topik dan klasterisasi artikel berita seputar KEMENHAM menggunakan pendekatan NLP untuk mengelompokkan berita berdasarkan kemiripan topik.</p>
+                            <div class="project-actions">
+                                <a href="https://github.com/RizalIndriawan/Pemodelan-Klasterisasi-Topik-Berita-KEMENHAM" target="_blank" rel="noopener" class="project-btn project-btn-github">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <button type="button" class="project-btn project-btn-details" data-project="news-clustering">
+                                    <span>Details</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Certificates Panel -->
+            <div class="portfolio-panel" id="panel-certificates" role="tabpanel" hidden>
+                <div class="certificates-grid">
+                    <div class="cert-card animate-reveal" data-tilt data-cert="bnsp">
+                        <div class="cert-image"><img src="assets/certs/bnsp.jpg" alt="Sertifikat Kompetensi BNSP - Junior Web Developer" loading="lazy"></div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">BNSP</span>
+                            <h3 class="cert-title">Sertifikat Kompetensi — Pengembang Web Pratama</h3>
+                            <span class="cert-date">Februari 2026</span>
+                        </div>
+                    </div>
+                    <div class="cert-card animate-reveal" data-tilt data-cert="toefl">
+                        <div class="cert-image"><img src="assets/certs/toefl.jpg" alt="Sertifikat English Proficiency Test Universitas Nasional" loading="lazy"></div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Universitas Nasional</span>
+                            <h3 class="cert-title">English Proficiency Test — Skor 653</h3>
+                            <span class="cert-date">November 2025</span>
+                        </div>
+                    </div>
+                    <div class="cert-card animate-reveal" data-tilt data-cert="software-dev">
+                        <div class="cert-image"><img src="assets/certs/software-dev.jpg" alt="Sertifikat IT Specialist Software Development" loading="lazy"></div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Certiport / Pearson VUE</span>
+                            <h3 class="cert-title">IT Specialist — Software Development</h3>
+                            <span class="cert-date">November 2025</span>
+                        </div>
+                    </div>
+                    <div class="cert-card animate-reveal" data-tilt data-cert="google-play">
+                        <div class="cert-image"><img src="assets/certs/google-play.jpg" alt="Sertifikat Google Play Academy Store Listing" loading="lazy"></div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Google Play Academy</span>
+                            <h3 class="cert-title">Store Listing Certificate</h3>
+                            <span class="cert-date">September 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Panel -->
+            <div class="portfolio-panel" id="panel-techstack" role="tabpanel" hidden>
+                <div class="techstack-grid">
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#217346"><span>X</span></div>
+                        <span class="tech-name">Excel</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#336791"><span>SQL</span></div>
+                        <span class="tech-name">SQL</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#3776ab"><span>Py</span></div>
+                        <span class="tech-name">Python</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#f2c811"><span>PBI</span></div>
+                        <span class="tech-name">Power BI</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#e97627"><span>Tb</span></div>
+                        <span class="tech-name">Tableau</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#4285f4"><span>DS</span></div>
+                        <span class="tech-name">Google Data Studio</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#4285f4"><span>GA</span></div>
+                        <span class="tech-name">Google Analytics</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#ff6f00"><span>TF</span></div>
+                        <span class="tech-name">TensorFlow</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#e34c26"><span>5</span></div>
+                        <span class="tech-name">HTML</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#2965f1"><span>3</span></div>
+                        <span class="tech-name">CSS</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#f0db4f; color:#111"><span>JS</span></div>
+                        <span class="tech-name">JavaScript</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#f05032"><span>Git</span></div>
+                        <span class="tech-name">Git</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#0db7ed"><span>Do</span></div>
+                        <span class="tech-name">Docker</span>
+                    </div>
+                    <div class="tech-tile animate-reveal" data-tilt>
+                        <div class="tech-icon" style="--tech-color:#47a248"><span>Mo</span></div>
+                        <span class="tech-name">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-box project-modal-box">
+            <button type="button" class="modal-close" id="project-modal-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-content" id="project-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Certificate Lightbox -->
+    <div class="modal-overlay" id="cert-modal">
+        <div class="modal-box cert-modal-box">
+            <button type="button" class="modal-close" id="cert-modal-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <img class="cert-modal-img" id="cert-modal-img" src="" alt="">
+            <div class="cert-modal-caption" id="cert-modal-caption"></div>
+        </div>
+    </div>
+
+    <!-- Experience Timeline -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag animate-reveal">// Education & Experience</span>
+                <h2 class="section-title animate-reveal">
+                    My <span class="gradient-text">Journey</span>
+                </h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item animate-reveal" id="exp-1">
+                    <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+                    <div class="timeline-content" data-tilt>
+                        <div class="timeline-date"><span>2022 — 2026</span></div>
+                        <h3 class="timeline-title">Bachelor of Computer Science, Informatics</h3>
+                        <h4 class="timeline-company">Universitas Nasional · GPA 3.73/4.00</h4>
+                        <p class="timeline-description">Menempuh studi Informatika dengan fokus pada pengembangan software, analisis data, dan solusi teknologi. Aktif membangun proyek data dan web di luar perkuliahan.</p>
+                        <div class="timeline-tags"><span>Software Development</span><span>Data Analysis</span><span>Machine Learning</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-reveal" id="exp-2">
+                    <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+                    <div class="timeline-content" data-tilt>
+                        <div class="timeline-date"><span>Mar — Jul 2024</span></div>
+                        <h3 class="timeline-title">Data & Machine Learning Intern</h3>
+                        <h4 class="timeline-company">Kementerian Hak Asasi Manusia RI · Pusdatin</h4>
+                        <p class="timeline-description">Magang 6 bulan di Pusat Data dan Informasi (Pusdatin), mengembangkan sistem klasterisasi topik berita berbasis Django dan Machine Learning. Memproses dan menganalisis 1.200+ artikel berita menggunakan text mining (TF-IDF), menerapkan K-Means Clustering untuk mengelompokkan berita secara otomatis, membangun dashboard visualisasi interaktif untuk analisis dan validasi manual, serta mengevaluasi performa klasterisasi menggunakan Silhouette Score dan Elbow Method.</p>
+                        <div class="timeline-tags"><span>Python</span><span>Django</span><span>Machine Learning</span><span>NLP</span><span>K-Means</span><span>Data Visualization</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag animate-reveal">// Get In Touch</span>
+                <h2 class="section-title animate-reveal">
+                    Let's Work <span class="gradient-text">Together</span>
+                </h2>
+                <p class="section-subtitle animate-reveal">
+                    Have a data project in mind? Let's collaborate and turn your data into insights.
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-reveal">
+                    <a href="mailto:jallindr96@gmail.com" class="contact-card" data-tilt>
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div><h3>Email</h3><p>jallindr96@gmail.com</p></div>
+                    </a>
+                    <a href="https://wa.me/6282258172679" target="_blank" rel="noopener" class="contact-card" data-tilt>
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div><h3>WhatsApp</h3><p>0822-5817-2679</p></div>
+                    </a>
+                    <div class="contact-card" data-tilt>
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div><h3>Location</h3><p>Jakarta Selatan, Indonesia</p></div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/RizalIndriawan" target="_blank" rel="noopener" class="social-link" id="social-github" aria-label="GitHub" data-tilt>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rizalindriawan" target="_blank" rel="noopener" class="social-link" id="social-linkedin" aria-label="LinkedIn" data-tilt>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="https://instagram.com/rijal.ind" target="_blank" rel="noopener" class="social-link" id="social-instagram" aria-label="Instagram" data-tilt>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form animate-reveal" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="form-name" class="form-input" placeholder=" " required>
+                        <label for="form-name" class="form-label">Your Name</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="form-email" class="form-input" placeholder=" " required>
+                        <label for="form-email" class="form-label">Your Email</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="form-subject" class="form-input" placeholder=" ">
+                        <label for="form-subject" class="form-label">Subject</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-message" class="form-input form-textarea" placeholder=" " rows="5" required></textarea>
+                        <label for="form-message" class="form-label">Your Message</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="form-submit">
+                        <span>Send Message</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">
+                        <span class="logo-text">RI</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rizal Indriawan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
